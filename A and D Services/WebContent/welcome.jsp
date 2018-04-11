@@ -91,38 +91,14 @@
 <!-- End page content -->
 </div>
 
-<!-- Google Map -->
-<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+<!-- Add Google Maps -->
+<iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27081.829984876924!2d115.83502914846802!3d-31.95469044858123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32bad5293bd573%3A0x504f0b535df4ee0!2sPerth+WA+6000%2C+Australia!5e0!3m2!1sen!2sin!4v1523425742788" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
   <p>Copyright@2017</p>
   <p>All copyrights are reserved by A & D Services WA Pvt. Ltd.</p>
 </footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(-31.950527, 115.860457);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC01XbR4ZqPUgdXpk1q8hmtP0XjsWJTEOU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 </body>
 </html>

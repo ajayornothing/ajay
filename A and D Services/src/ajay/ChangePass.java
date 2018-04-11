@@ -47,13 +47,15 @@ public class ChangePass extends HttpServlet {
 			st = con.prepareStatement("update users set password=? where userid=?");
 			st.setString(1,pwd);
 		    st.setString(2,userid);
+		    st.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		RequestDispatcher rd=request.getRequestDispatcher("chagepwd/pwdchanged.jsp");
-		rd.forward(request, response);
+		session.setAttribute("message","Your password has been successfully changed");
+		//RequestDispatcher rd=request.getRequestDispatcher("changepwd/pwdstatus.jsp");
+		response.sendRedirect("changepwd/pwdstatus.jsp");
+		//rd.forward(request, response);
 		doGet(request, response);
 	}
 
