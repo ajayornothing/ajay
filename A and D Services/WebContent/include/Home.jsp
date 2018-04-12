@@ -24,7 +24,7 @@ You are not logged in<br/>
   <a href="#">Fuel Inventory</a>
   <a href="../siterecords/siterecords.jsp">Site Records</a>
   <a href="#">Subcontractor Details</a>
-  <a href="#">Admin Settings</a>
+  <a href="../admin/admin.jsp">Admin Settings</a>
   <a href="../pwdreset/pwdchange.jsp">Change Password</a>
   <a href="../login/logout.jsp">Logout</a>
    
@@ -34,10 +34,7 @@ You are not logged in<br/>
 <h2 class="header">A&D Services WA Pvt. Ltd.</h2>
 <hr>
 <span style="font-size:30px;cursor:pointer;float:left;" onclick="openNav()">&#9776; </span>
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Copyright@2017</p>
-  <p>All copyrights are reserved by A & D Services WA Pvt. Ltd.</p>
-</footer>
+
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

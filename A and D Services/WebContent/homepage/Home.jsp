@@ -25,7 +25,7 @@
   <a href="#">Fuel Inventory</a>
   <a href="../siterecords/siterecords.jsp">Site Records</a>
   <a href="#">Subcontractor Details</a>
-  <a href="#">Admin Settings</a>
+  <a href="../admin/admin.jsp">Admin Settings</a>
   <a href="../changepwd/checkold.jsp">Change Password</a>
   <a href="../login/logout.jsp">Logout</a>
    
