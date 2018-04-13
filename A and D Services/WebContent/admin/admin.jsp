@@ -30,7 +30,7 @@ text-align: center;
 </head>
 <body>
   <div class="display" >
-<a class="admin" href="addsite.jsp" >View All Users</a>
+<a class="admin" href="../viewusers" >View All Users</a>
   </div>
 </body>
 </html>
