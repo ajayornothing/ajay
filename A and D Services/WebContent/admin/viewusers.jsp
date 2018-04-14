@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import ="java.sql.*" %>
     
+    <%
+    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+%>
+    <h3 style="color:yellow; text-align:center;">You are not logged in</h3>		
+  <%@ include file="../login/index.jsp"%> 
+<%}else{%>
+
+<%@include file="../include/Home.jsp"%>
+    
+    
+    <%@ page import ="java.sql.*" %>
     <%
     ResultSet rs=(ResultSet)session.getAttribute("resultset");
     %>
@@ -9,6 +19,10 @@
 <html>
 <head>
 <style>
+div {
+	margin:auto;
+    width:70%
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -28,8 +42,8 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2 text-align="center">Users Information</h2>
-
+<h2 style="text-align: center;"><span style="color: #800000;">Users Information</span></h2>
+<div>
 <table>
   <tr>
     <th>UserID</th>
@@ -38,6 +52,7 @@ tr:nth-child(even) {
     <th>Phone</th>
     <th>Email Id</th>
     <th>Password</th>
+    <th>Delete</th>
     
   </tr>
   <%while(rs.next())
@@ -51,10 +66,13 @@ tr:nth-child(even) {
     <td><%=rs.getString(4) %></td>
     <td><%=rs.getString(5) %></td>
     <td><%=rs.getString(6) %></td>
+    <td><a href="../Delete?userid='+<%=rs.getString(1)%>+'">Delete</a></td>
     
   </tr>
  <%} %>
 </table>
+</div>
 
 </body>
 </html>
+<%} %>

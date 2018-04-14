@@ -1,3 +1,12 @@
+   <%
+    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+%>
+    <h3 style="color:yellow; text-align:center;">You are not logged in</h3>		
+  <%@ include file="../login/index.jsp"%> 
+<%}else{%>
+
+<%@include file="../include/Home.jsp"%>
+
 <html>
 <head>
 <title>Admin Settings</title>
@@ -22,7 +31,6 @@
   border: 3px solid #73AD21;
   text-decoration:none;
 text-align: center;
-  
   }
  
   }
@@ -34,3 +42,4 @@ text-align: center;
   </div>
 </body>
 </html>
+<%}%>
