@@ -21,12 +21,23 @@
 
 <!DOCTYPE html>
 <!-- search form 6 -->
-<div class="button_box2">
-<form class="form-wrapper-2 cf">
-<input type="text" placeholder="site data list hear..." required aling="center">
+<form class="form-wrapper-2 cf"     width: 505;
+    margin: 110px;>
+
+<div>
+<input type="text" placeholder="site data list hear..." required>
 <button type="submit">Search</button>
-</form>
 </div>
+
+
+
+</form>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Copyright@2017</p>
+  <p>All copyrights are reserved by A & D Services WA Pvt. Ltd.</p>
+</footer>
 </body>
 </html>
 <%}%>
