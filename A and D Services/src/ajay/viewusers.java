@@ -1,7 +1,10 @@
 package ajay;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -9,18 +12,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class viewusers
+ * Servlet implementation class ViewUsers
  */
-@WebServlet("/viewusers")
-public class viewusers extends HttpServlet {
+@WebServlet("/ViewUsers")
+public class ViewUsers extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewusers() {
+    public ViewUsers() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,17 +36,19 @@ public class viewusers extends HttpServlet {
 		// TODO Auto-generated method stub
 		ServletContext ctx=request.getServletContext();
 		Connection con=(Connection)ctx.getAttribute("connection");
-		PreparedStatement ps;
+		
 		try {
-			ps = con.prepareStatement("select * from users");
+			PreparedStatement ps = con.prepareStatement("select * from users");
 			ResultSet rs= ps.executeQuery();
+			HttpSession session=request.getSession();
+			session.setAttribute("resultset", rs);
+			response.sendRedirect("admin/viewusers.jsp");
 		}
 		
 		 catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 	}
 
 	/**
