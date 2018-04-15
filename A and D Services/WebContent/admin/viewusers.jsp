@@ -66,7 +66,7 @@ tr:nth-child(even) {
     <td><%=rs.getString(4) %></td>
     <td><%=rs.getString(5) %></td>
     <td><%=rs.getString(6) %></td>
-    <td><a href="../Delete?userid='+<%=rs.getString(1)%>+'">Delete</a></td>
+    <td><a href="../Delete?userid=<%=rs.getString(1)%>">Delete</a></td>
     
   </tr>
  <%} %>

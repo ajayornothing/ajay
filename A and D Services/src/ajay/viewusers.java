@@ -38,10 +38,11 @@ public class ViewUsers extends HttpServlet {
 		Connection con=(Connection)ctx.getAttribute("connection");
 		
 		try {
-			PreparedStatement ps = con.prepareStatement("select * from users");
+			PreparedStatement ps = con.prepareStatement("select * from users order by userid");
 			ResultSet rs= ps.executeQuery();
 			HttpSession session=request.getSession();
 			session.setAttribute("resultset", rs);
+			
 			response.sendRedirect("admin/viewusers.jsp");
 		}
 		

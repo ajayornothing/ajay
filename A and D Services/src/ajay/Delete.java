@@ -43,6 +43,7 @@ public class Delete extends HttpServlet {
 			PreparedStatement ps = con.prepareStatement("delete from users where userid=?");
 			ps.setString(1,userid);
 			int i=ps.executeUpdate();
+			System.out.println("Userid:"+userid);
 			request.getRequestDispatcher("ViewUsers").forward(request, response);			
 			
 		}
